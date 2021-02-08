@@ -1,0 +1,16 @@
+---
+
+- hosts: ibox
+  become: true
+  tasks:
+          - name: odświeżenie apt
+            apt:
+                    update_cache: yes 
+          - name: instalowanie apacza
+            apt:
+                    name: apache2
+                    state: latest 
+          - name: instalacja tmux
+            apt:
+                    name: tmux
+
